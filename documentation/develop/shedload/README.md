@@ -23,7 +23,7 @@ To see the Shed Load Pattern in action using semaphore, we will use Apache JMete
 * Modify the Apache JMeter script by enabling the Config Element ` Localhost` and disabling the Config Element `Cloud Foundry` if you plan to run the JMeter script against the local deployment of the application. Vice versa if you plan to run the JMeter script against the application endpoint deployed on Cloud Foundry.
 * Modify `Server Name or IP` and `Port` parameters in elements `HTTP Request Defaults: Localhost` or `HTTP Request Defaults: Cloud Foundry` based on your applications endpoints.
 * Run the Apache JMeter scripts and analyze the HTTP responses via the `All Responses ` element in JMeter.
-* When the system is overloaded you will observe requests being rejected with status HTTP 503 (Service Unavailable)
+* When the system is overloaded you will observe requests being "Rejected, too many requests" with status HTTP 429 (Service Unavailable)
 
 #### Resilience4j-RateLimiter
 The [RateLimiter](https://resilience4j.readme.io/docs/ratelimiter) pattern from resilience4j library is another very effective way to limit the rate of concurrent requests. This approach is implemented in Customer service. The ratelimiter is configured using three properties:
